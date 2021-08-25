@@ -1,0 +1,46 @@
+┌──(chris㉿Kali)-[~/Documents/lab4]
+└─$ cat accesses.txt | ./fifo 100 
+9019 Total Page Faults
+                                                                                                                                                              
+┌──(chris㉿Kali)-[~/Documents/lab4]
+└─$ cat accesses.txt | ./fifo 10 
+9917 Total Page Faults
+                                                                                                                                                              
+┌──(chris㉿Kali)-[~/Documents/lab4]
+└─$ cat accesses.txt | ./fifo 200 
+8042 Total Page Faults
+                                                                                                                                                              
+┌──(chris㉿Kali)-[~/Documents/lab4]
+└─$ cat accesses.txt | ./fifo 500   
+5131 Total Page Faults
+                                                                                                                                                              
+┌──(chris㉿Kali)-[~/Documents/lab4]
+└─$ cat accesses.txt | ./fifo 700
+3302 Total Page Faults
+                                                                                                                                                              
+┌──(chris㉿Kali)-[~/Documents/lab4]
+└─$ cat accesses.txt | ./fifo 1000
+999 Total Page Faults
+                                                                                                                                                              
+┌──(chris㉿Kali)-[~/Documents/lab4]
+└─$ cat accesses.txt | ./fifo 1200
+999 Total Page Faults
+                                                                                                                                                              
+┌──(chris㉿Kali)-[~/Documents/lab4]
+└─$ cat accesses.txt | ./fifo 1500 
+999 Total Page Faults
+                                                                                                                                                              
+┌──(chris㉿Kali)-[~/Documents/lab4]
+
+
+These are the outputs from rang 10-1500. As the range starts getting into 1000 it has the same amount of page faults. Although as it starts it
+decrements slowly each iteration up until 1000. 
+
+My code utilizes the queue class that was given to us.
+
+Inside the while loop:
+The input is checked using isDigit to prevent any characters or whitespace from entering the queue.
+
+If a page number is not in the queue it is added into it and a page fault is incremented.
+
+The queue is automatically decremented if it is bigger than CSIZE. 

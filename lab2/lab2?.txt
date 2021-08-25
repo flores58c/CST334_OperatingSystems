@@ -1,0 +1,4 @@
+In step 3 running the lab2 command only outputs a segmentation fault
+due to the lack of input from the user. 
+
+In step 4 the 500 ms delay is result appears instantly. If you have a 5000 ms delay which is 5 seconds you see that the output prints iteratively.

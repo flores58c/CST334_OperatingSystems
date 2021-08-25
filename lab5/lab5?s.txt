@@ -1,0 +1,27 @@
+Explain what happens when you run this threadHello.cprogram; can you list how many threads are created and what values of i are passed?
+The amount of threads are 10 in total and the values of i passed are from 0-9.
+
+Do you get the same result if you run it multiple times? 
+No the run results are not the same.
+
+ What if you are also running some other demanding processes (e.g., compiling a big program, playing a Flash game on a website, or watching streaming video) when you run this program?
+ The thread will be able to run.
+ 
+ 
+ 
+ The functiongo() has the parameter arg passed a local variable. Are these variables per-thread or shared state?
+ This function is per thread since not every thread shares the variable passed into arg.
+ 
+  Where does the compiler store these variables’ states?
+  The variables are stored on the stack
+  
+  Themain() has local variable i. Is this variable per-thread or sharedstate? Where does the compiler store thisvariable? 
+  This is not per thread it is shared since it is in stack memory.
+  
+  Write down your observations. You probably have seen that there is a bug in the program, where threads may print same values of i. Why?
+  The bug is that the variable i is being passed into arg but this creates a race condition on all the threads since each is trying to access i.
+  
+  The solution for step1 is to create a dynamic array which is in heap memory. This is to done so the threads can all see the data that needs to be accessed if they need to. Now the program should run. Also the dynamic array should be an array of int pointers. 
+  
+  The last step for matrix multiplication involves a similar process to store the iterations of i to be used in the dot function. The dot function takes
+  the argument and then uses *(int*) type cast to get the actual values of i it needs to access.
